@@ -99,7 +99,7 @@ export default function Home() {
               projectDescription={
                 "NIIC Online Shop – Helping automating the written material orders"
               }
-              projectOverview={`Wikibuy is a chrome plugin that helps you get coupon codes, loyalty rewards, and better offers from other sellers on products you’re interested in. For example, if you’re on the hunt for a camera and search for that camera on sites like Amazon, Wikibuy then pops up and gives you several other options of prices and places to purchase that ca`}
+              projectOverview={`This Web App is designed to be used as an automated order processing system for a local charity in Nottingham, UK`}
               imgUrl={`/niic/niic-home.png`}
               roles={[`Designer`, `Developer`]}
               Deliverables={[
