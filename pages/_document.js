@@ -10,6 +10,7 @@ export default function Document() {
           href='https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap'
           rel='stylesheet'
         />
+        <link rel='icon' href='/icon.png'></link>
       </Head>
       <body>
         <Main />

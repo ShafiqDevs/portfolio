@@ -66,6 +66,9 @@ export default function Home() {
 
   return (
     <>
+    <Head>
+      <title>{`Portfolio`}</title>
+    </Head>
       <div className={`w-full h-fit pl-4 pr-4 md:pl-20 md:pr-20 bg-black/80`}>
         <div>
           <NavBar />

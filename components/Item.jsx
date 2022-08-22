@@ -42,12 +42,13 @@ export default function Item({
           src={`${logo}`}
           width={40}
           height={40}
+          alt={"Img"}
           className={`rounded-full`}
         />
         <h1>{projectTitle}</h1>
       </div>
       <div className='flex flex-col gap-5'>
-        <img src={`${imgUrl}`} className={"aspect-video"} />
+        <img src={`${imgUrl}`} alt={`Img`} className={"aspect-video"} />
         <h1 className='text-xl md:text-2xl'>{projectDescription}</h1>
         <div className='flex gap-4'>
           {KeyWords.map((item) => {
