@@ -7,6 +7,9 @@ import NavBar from "../components/NavBar";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
 import { data } from "autoprefixer";
+import Typewriter from 'typewriter-effect'
+
+
 
 export default function Home() {
   const [itemViewerOn, setItemViewerOn] = useState();
@@ -21,6 +24,7 @@ export default function Home() {
     images: [],
     projectOverview: "",
     projectLink: "",
+    story: "",
   });
 
   function toggleItemViewer(
@@ -34,7 +38,8 @@ export default function Home() {
     Deliverables,
     images,
     projectOverview,
-    projectLink
+    projectLink,
+    story
   ) {
     setItemViewerData({
       logo,
@@ -47,9 +52,18 @@ export default function Home() {
       images,
       projectOverview,
       projectLink,
+      story,
     });
     setItemViewerOn(show);
   }
+
+  const TypewriterOptions = {
+    strings: [`NTU`,`NIIC`,`ShafDevs`],
+    autoStart: true,
+    loop: true,
+  }
+
+
   return (
     <>
       <div className={`w-full h-fit pl-4 pr-4 md:pl-20 md:pr-20 bg-black/80`}>
@@ -57,59 +71,101 @@ export default function Home() {
           <NavBar />
         </div>
 
-        <div className='w-full h-fit mt-40 flex flex-col items-center text-center lg:items-start lg:text-start gap-14 text-white'>
+        <div className='w-full h-fit mt-40 flex flex-col items-center text-start lg:items-start gap-14 text-white'>
           <h1 className='text-2xl lg:text-5xl lg:w-1/2 '>
-            Developing Websites / Webapps for companies like <span>NIIC</span>{" "}
+            Developing Websites / Web Apps for companies and organizations like{" "}
+            <span><Typewriter options={TypewriterOptions} /></span>{" "}
           </h1>
           <h1 className='md:w-1/3  md:text-xl'>
-            if you're looking for a freelance developer to help bring an idea to
-            life — let's jam
+            {`if you're looking for a freelance developer to help bring an idea to
+            life — let's jam`}
           </h1>
 
-          <Buttoonn text={"shafiq.belaroussi@outlook.com"} />
+          <Buttoonn
+            text={"shafiq.belaroussi@outlook.com"}
+            link={"mailto:shafiq.belaroussi@outlook.com"}
+          />
         </div>
 
-        <div className='w-full h-fit mt-40  text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row'>
-          <div className='flex flex-col gap-4 py-10 px-24'>
+        <div className='w-full h-fit mt-40  text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-5'>
+          <div className='flex flex-col gap-4 '>
             <Item
               toggleItemViewer={toggleItemViewer}
-              logo={`/niic.png`}
+              logo={`/niic/niic.png`}
               projectTitle={"NIIC Online Shop"}
               projectDescription={
                 "NIIC Online Shop – Helping automating the written material orders"
               }
               projectOverview={`Wikibuy is a chrome plugin that helps you get coupon codes, loyalty rewards, and better offers from other sellers on products you’re interested in. For example, if you’re on the hunt for a camera and search for that camera on sites like Amazon, Wikibuy then pops up and gives you several other options of prices and places to purchase that ca`}
-              imgUrl={`/shafiq.png`}
-              roles={[]}
-              Deliverables={[]}
-              images={[]}
-              projectLink={`sdf`}
+              imgUrl={`/niic/niic-home.png`}
+              roles={[`Designer`, `Developer`]}
+              Deliverables={[
+                `Web app Design`,
+                `Web app development`,
+                `Backend development`,
+              ]}
+              images={[
+                `/niic/niic-basket.png`,
+                `/niic/niic-body.png`,
+                `/niic/niic-stripe.png`,
+                `/niic/niic-payment-ok.png`,
+              ]}
+              projectLink={`https://notttingham-islam-online-shop.vercel.app/`}
               KeyWords={[`eCommerce`, `React`, `Backend`]}
+              story={`NIIC, which also stands for Nottingham Islam Information Centre. I had spent some time with some of the trustees there and realised that they process their orders manually from calculating the weight of the boxes, measuring the box size and processing customer information one by one. So I volunteered to create this website to automate everything using a database and an online paypment processing API.`}
             />
           </div>
-          <div className='flex flex-col gap-4'></div>
-          <div className='flex flex-col gap-4'></div>
+          <div className='flex flex-col gap-4'>
+            <Item
+              toggleItemViewer={toggleItemViewer}
+              logo={`/weather/edify.jpg`}
+              projectTitle={"Weather Station API"}
+              projectDescription={
+                "Weather Station API – Collecting weather data from different cities to use in Virtual Reality Board in Edify "
+              }
+              projectOverview={`This is a special Web page designed specifically to use in a VR board. it broadcasts weathe data of a chosen city`}
+              imgUrl={`/weather/weather-home.png`}
+              roles={[`Designer`, `Developer`]}
+              Deliverables={[
+                `Web app Design`,
+                `Web app development`,
+                `Backend development`,
+              ]}
+              images={[
+                `/weather/weather-home.png`,
+                `/weather/weather-london.png`,
+                `/weather/weather-newyork.png`,
+                `/weather/weather-nottingham.png`,
+              ]}
+              projectLink={`https://weather-data-ten.vercel.app/`}
+              KeyWords={[`API`, `React`, `Backend`, `VR Helper Apps`, `Edify`]}
+              story={`I work as a Intern VR Developer at Nottingham Trent University. Our project aims to develop a VR environments for Construction Management students to conduct their experiments and simulations. We colaborated with an education VR Platform in the UK called Edify and in their platform I created this website to be used in the board inside the VR world to be used in one of our use cases.`}
+            />
+          </div>
         </div>
       </div>
       {itemViewerOn && (
         <ItemViewer
-          logo={itemViewerData.logl}
+          logo={itemViewerData.logo}
           projectTitle={itemViewerData.projectTitle}
           projectDescription={itemViewerData.projectDescription}
           KeyWords={itemViewerData.KeyWords}
           imgUrl={itemViewerData.imgUrl}
-          roles={[`Designer`, `Developer`]}
-          Deliverables={[
-            `Web app Design`,
-            `Web app development`,
-            `Backend development`,
-          ]}
-          images={[]}
+          roles={itemViewerData.roles}
+          Deliverables={itemViewerData.Deliverables}
+          images={itemViewerData.images}
           projectOverview={itemViewerData.projectOverview}
           projectLink={itemViewerData.projectLink}
           toggleItemViewer={toggleItemViewer}
+          story={itemViewerData.story}
         />
       )}
     </>
   );
+}
+
+export async function getStaticProps(context) {
+  return {
+    props: {}, // will be passed to the page component as props
+  };
 }
