@@ -18,8 +18,8 @@ export default function Carousel({ images }) {
       <motion.div className='innerCarousel flex min-w-min'>
         {images.map((image, index) => {
           return (
-            <motion.div key={uuidv4()} className='item pointer-events-none min-h-[10rem] min-w-fit md:min-w-[80%] w-[50%] p-9 '>
-              <img className='rounded-lg aspect-video shadow-lg' src={image} />
+            <motion.div key={uuidv4()} className='item pointer-events-none min-h-[10rem] min-w-fit md:min-w-[80%] w-[50%] p-9 my-auto'>
+              <img className='rounded-lg aspect-video max shadow-lg' src={image} />
             </motion.div>
           );
         })}
