@@ -79,8 +79,7 @@ export default function Home() {
 						</span>{' '}
 					</h1>
 					<h1 className='md:w-1/3  md:text-xl'>
-						{`if you're looking for a freelance developer to help bring an idea to
-            life — let's jam`}
+						{`if you're looking for a freelance developer to help bring an idea to life — let's jam`}
 					</h1>
 
 					<Buttoonn
@@ -90,6 +89,46 @@ export default function Home() {
 				</div>
 
 				<div className='w-full h-fit mt-40  text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-5'>
+					<div className='flex flex-col gap-4'>
+						<Item
+							toggleItemViewer={toggleItemViewer}
+							logo={`/wizardtools/wizard logo.webp`}
+							projectTitle={'Wizard Tools'}
+							projectDescription={
+								'Wizard Tools is a platform and a community where RuneScape gamers have access to a tool that helps them automate their game progress without having to be active on their computer. gamers can have full access to this tool and the discord community for a small monthyly fee'
+							}
+							projectOverview={`This project was requested by the founder of Wizard Tools. they needed an online platform that can manage user accounts data, payment transactions and file hosting.
+							Wizard Tools platform now allows users to sign up using their Discord ID and purchase a subscription of their choice. Once the subscription has been activated, the user will have an upgraded Discord role which grants them access to exclusing channels on the Discord community and then have their roles downgraded back down once the subscription is expired.
+							As per the requirements of the client, all subscriptions are to be set to renew manually to avoid issues with their customers.`}
+							imgUrl={`/wizardtools/homepage.png`}
+							roles={[`Developer`]}
+							Deliverables={[
+								`Web app Design`,
+								`Web app development`,
+								`Backend development`,
+								`Payment processing`,
+								`Discord Bot development`,
+							]}
+							images={[
+								`/wizardtools/homepage.png`,
+								`/wizardtools/paymentoptions.png`,
+								`/wizardtools/userdashboard.png`,
+								`/wizardtools/discordcommunity.png`,
+							]}
+							projectLink={`https://wizard-tools.com/`}
+							KeyWords={[
+								`API`,
+								`React`,
+								`Backend`,
+								`Discord Bot`,
+								`Stripe`,
+								`NextJS`,
+							]}
+							story={`The client on this project reached out to me through a friend of mine given my background in software development and my knowledge in customer service and gaming. The client wanted a very specific looking website that suited the style of the game and other competitors in the market which is why they provided a complete design plan for me to implement.
+							
+							I now charge a percentage fee for every subscription purchased through this platform which gives me a passive income. I consider this project one of my best projects so far as a developer`}
+						/>
+					</div>
 					<div className='flex flex-col gap-4 '>
 						<Item
 							toggleItemViewer={toggleItemViewer}
