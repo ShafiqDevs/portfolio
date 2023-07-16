@@ -6,7 +6,8 @@ export default function Buttoonn({ text, link }) {
 			<button className='rounded-3xl hover:shadow-gray-900 shadow-md hover:bg-violet-900  hover:text-white bg-white  text-black w-fit py-4 px-6'>
 				<a
 					href={link}
-					target='_blank'>
+					target='_blank'
+					rel='noreferrer'>
 					{text}
 				</a>
 			</button>
